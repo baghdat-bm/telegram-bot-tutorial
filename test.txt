@@ -1,0 +1,8 @@
+curl -X 'POST' \
+  'https://api.kezekshi.kz:33443/auth/search-phone-number' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer 2e1ef231c95d8282df5f5c6d6a8ab43a386321584a5a53da63fd57c09d9a2505' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "phone_number": "+77776665544"
+}'

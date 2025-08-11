@@ -27,6 +27,14 @@ SECOND_MENU_MARKUP = InlineKeyboardMarkup([
 ])
 
 
+def start(update: Update, context: CallbackContext):
+    user = update.effective_user
+    chat_id = update.effective_chat.id
+    # Сохраняем chat_id, например, в файл или БД
+    print(f"User @{user.username} has chat_id = {chat_id}")
+    context.bot.send_message(chat_id=chat_id, text="Привет! Я запомнил ваш chat_id.")
+
+
 def echo(update: Update, context: CallbackContext) -> None:
     """
     This function would be added to the dispatcher as a handler for messages coming from the Bot API
@@ -106,13 +114,15 @@ def button_tap(update: Update, context: CallbackContext) -> None:
 
 
 def main() -> None:
-    updater = Updater("<YOUR_BOT_TOKEN_HERE>")
+    # updater = Updater("7972752260:AAHZAJytYVN-2Kuv-vSMIZw-qJm_VOey6-8")
+    updater = Updater("5324012581:AAF8LNhL-lwkfCsX7eaOxDEMqn2oj7uXfL4")
 
     # Get the dispatcher to register handlers
     # Then, we register each handler and the conditions the update must meet to trigger it
     dispatcher = updater.dispatcher
 
     # Register commands
+    dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("scream", scream))
     dispatcher.add_handler(CommandHandler("whisper", whisper))
     dispatcher.add_handler(CommandHandler("menu", menu))
