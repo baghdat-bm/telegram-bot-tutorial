@@ -114,8 +114,7 @@ def button_tap(update: Update, context: CallbackContext) -> None:
 
 
 def main() -> None:
-    # updater = Updater("7972752260:AAHZAJytYVN-2Kuv-vSMIZw-qJm_VOey6-8")
-    updater = Updater("5324012581:AAF8LNhL-lwkfCsX7eaOxDEMqn2oj7uXfL4")
+    updater = Updater("<bot-token>")
 
     # Get the dispatcher to register handlers
     # Then, we register each handler and the conditions the update must meet to trigger it
